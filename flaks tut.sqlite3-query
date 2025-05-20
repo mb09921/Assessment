@@ -1,0 +1,32 @@
+-- database: ./database.db
+
+-- Use the ▷ button in the top right corner to run the entire file.
+
+SELECT * FROM Bikes;
+
+INSERT INTO Bikes(Model, TopSpeed, Cost, Description) VALUES ("MT-03",108,5300, "The Yamaha MT-03 is a compact naked bike with a 321cc parallel-twin engine.");
+INSERT INTO Bikes(Model, TopSpeed, Cost, Description) VALUES ('Yamaha YZF-R1', 186, 17399, 'A high-performance sportbike with a 998cc engine and advanced electronics.');
+INSERT INTO Bikes(Model, TopSpeed, Cost, Description) VALUES ('Yamaha MT-07', 133, 8099, 'A versatile and lightweight naked bike with a 689cc parallel-twin engine.');
+INSERT INTO Bikes(Model, TopSpeed, Cost, Description) VALUES ('Yamaha XSR900', 140, 9999, 'A retro-styled sport heritage bike with a powerful 890cc engine.');
+INSERT INTO Bikes(Model, TopSpeed, Cost, Description) VALUES ('Suzuki GSX-R1000', 186, 15899, 'A legendary superbike with a 999cc inline-four engine and race-inspired technology.');
+INSERT INTO Bikes(Model, TopSpeed, Cost, Description) VALUES ('Suzuki Hayabusa', 186, 18999, 'A legendary hyperbike with a 1340cc engine and iconic aerodynamic design.');
+INSERT INTO Bikes(Model, TopSpeed, Cost, Description) VALUES ('Suzuki SV650', 130, 7799, 'A middleweight V-twin with agility and a user-friendly riding experience.');
+INSERT INTO Bikes(Model, TopSpeed, Cost, Description) VALUES ('Kawasaki Ninja H2', 209, 31000, 'A supercharged sportbike with a 998cc engine and cutting-edge technology.');
+INSERT INTO Bikes(Model, TopSpeed, Cost, Description) VALUES ('Kawasaki Z900', 155, 9399, 'A naked streetfighter with a 948cc inline-four engine and aggressive styling.');
+INSERT INTO Bikes(Model, TopSpeed, Cost, Description) VALUES ('Kawasaki Versys 650', 120, 8799, 'An adventure-touring motorcycle with a 649cc parallel-twin engine.');
+INSERT INTO Bikes(Model, TopSpeed, Cost, Description) VALUES ('Kawasaki Vulcan S', 110, 7699, 'A cruiser-style bike with a 649cc engine and customizable ergonomics.');
+
+
+
+--All bikes
+SELECT * FROM Bikes;
+
+-- All bikes and the maker
+SELECT Makers.name, Bikes.model FROM bikes
+JOIN Makers ON Maker.MakerID = Bikes.MakerID;
+
+-- All bikes made by Yamaha
+SELECT Bikes.model FROM Bikes 
+JOIN Makers ON Maker.MakerID=Bikes.MakerID
+WHERE Makers.name = 'Yamaha';
+
